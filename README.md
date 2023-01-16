@@ -16,6 +16,7 @@ The overall framework of RDM.
 ```
 git clone https://github.com/haha-lisa/RDM-Region-Aware-Diffusion-Model
 cd RDM-Region-Aware-Diffusion-Model
+install [latent diffusion](https://github.com/CompVis/latent-diffusion)
 pip install -e .
 ```
 
