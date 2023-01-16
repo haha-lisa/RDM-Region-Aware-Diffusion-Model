@@ -27,7 +27,7 @@ pip install -e .
 
 ## Run
 ```
-python run_edit.py --edit ./input_image/flower1.jpg --mask ./input_image/flower1_mask.png \
+python run_edit.py --edit ./input_image/flower1.jpg --region ./input_image/flower1_region.png \
 -fp "a flower" --batch_size 6 --num_batches 2 \
 --text "a chrysanthemum" --prefix "test_flower"
 ```

@@ -93,7 +93,7 @@ parser.add_argument('--edit_height', type = int, required = False, default = 0,
                     help='height of the edit image in the generation frame (need to be multiple of 8)')
 
 parser.add_argument('--region', type = str, required = False,
-                    help='Save path for generating mask images')
+                    help='Save path for generating interest region images')
 
 parser.add_argument('--negative', type = str, required = False, default = '',
                     help='negative text prompt')
