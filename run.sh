@@ -1,0 +1,2 @@
+python run_edit.py --edit ./input_image/flower1.jpg --mask ./input_image/flower1_mask.png \
+-fp "a flower" --model_path inpaint.pt --batch_size 1 --num_batches 1 --text "a chrysanthemum" --prefix "0116"
