@@ -16,9 +16,9 @@ The overall framework of RDM.
 ```
 git clone https://github.com/haha-lisa/RDM-Region-Aware-Diffusion-Model
 cd RDM-Region-Aware-Diffusion-Model
-install [latent diffusion](https://github.com/CompVis/latent-diffusion)
 pip install -e .
 ```
+And install [latent diffusion](https://github.com/CompVis/latent-diffusion)
 
 ## Pretrained models
 [bert](https://dall-3.com/models/glid-3-xl/bert.pt), [kl-f8](https://dall-3.com/models/glid-3-xl/kl-f8.pt), [diffusion](https://dall-3.com/models/glid-3-xl/inpaint.pt)
