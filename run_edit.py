@@ -65,7 +65,7 @@ def str2bool(x):
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--model_path', type=str, default = 'finetune.pt',
+parser.add_argument('--model_path', type=str, default = 'inpaint.pt',
                    help='path to the diffusion model')
 
 parser.add_argument('--kl_path', type=str, default = 'kl-f8.pt',
@@ -92,8 +92,8 @@ parser.add_argument('--edit_width', type = int, required = False, default = 0,
 parser.add_argument('--edit_height', type = int, required = False, default = 0,
                     help='height of the edit image in the generation frame (need to be multiple of 8)')
 
-parser.add_argument('--mask', type = str, required = False,
-                    help='path to a mask image. white pixels = keep, black pixels = discard. width = image width/8, height = image height/8')
+parser.add_argument('--region', type = str, required = False,
+                    help='Save path for generating mask images')
 
 parser.add_argument('--negative', type = str, required = False, default = '',
                     help='negative text prompt')
@@ -299,8 +299,8 @@ with torch.no_grad():
 
 
 mask = torch.sigmoid(preds[0][0])
-vutils.save_image(mask, args.mask, normalize=True)
-image = cv2.imread(args.mask)                     
+vutils.save_image(mask, args.region, normalize=True)
+image = cv2.imread(args.region)                     
 image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)  
 	
 
@@ -315,7 +315,7 @@ for row in range(x):
             timg[row][col] = 255
         if (timg[row][col]) < 100:
             timg[row][col] = 0
-cv2.imwrite(args.mask, timg) 
+cv2.imwrite(args.region, timg) 
 
 
 
@@ -323,7 +323,7 @@ if args.background is None:
     fulltensor = torch.full_like(mask,fill_value=255)
 
     bgtensor = fulltensor-timg
-    vutils.save_image(bgtensor, args.mask, normalize=True)
+    vutils.save_image(bgtensor, args.region, normalize=True)
     
 
 
@@ -417,8 +417,8 @@ def do_run():
 
             input_image *= 0.18215
 
-        if args.mask:
-            mask_image = Image.open(fetch(args.mask)).convert('L')
+        if args.region:
+            mask_image = Image.open(fetch(args.region)).convert('L')
             mask_image = mask_image.resize((args.width//8,args.height//8), Image.Resampling.LANCZOS)
             mask = transforms.ToTensor()(mask_image).unsqueeze(0).to(device)
 
@@ -533,10 +533,10 @@ def do_run():
                 pred_image = sample["pred_xstart"][b]
 
                 if (
-                    args.mask is not None
+                    args.region is not None
                     and args.enforce_background
                 ):
-                    mask_image = Image.open(fetch(args.mask)).convert('L')
+                    mask_image = Image.open(fetch(args.region)).convert('L')
                     mask_image = mask_image.resize((args.height, args.width), Image.Resampling.LANCZOS)
                     mask = transforms.ToTensor()(mask_image).unsqueeze(0).to(device)
                     pred_image = (
