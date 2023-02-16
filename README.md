@@ -2,6 +2,8 @@
 
 This is the official PyTorch implementation of the paper ''Region-Aware Diffusion for Zero-shot Text-driven Image Editing''.
 
+<a href="https://huggingface.co/spaces/alvanlii/RDM-Region-Aware-Diffusion-Model"><img src="https://img.shields.io/badge/%20HuggingFace%20-Demo-blue.svg" alt="HuggingFace Spaces"></a>
+
 ![MAIN3_e2-min](https://github.com/haha-lisa/RDM-Region-Aware-Diffusion-Model/blob/main/teaser.png)
 
 ## Abstract
