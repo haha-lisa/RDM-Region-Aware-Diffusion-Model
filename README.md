@@ -28,7 +28,7 @@ And install [latent diffusion](https://github.com/CompVis/latent-diffusion)
 
 ## Pretrained models
 [bert](https://dall-3.com/models/glid-3-xl/bert.pt), [kl-f8](https://dall-3.com/models/glid-3-xl/kl-f8.pt), [diffusion](https://dall-3.com/models/glid-3-xl/inpaint.pt)
-<br> Please download them and put them into the floder ./ <br> 
+<br> Please download them and put them into the folder ./ <br> 
 
 
 ## Run
