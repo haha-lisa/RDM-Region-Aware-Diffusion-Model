@@ -1,6 +1,6 @@
 # RDM: Region-Aware Diffusion for Zero-shot Text-driven Image Editing
 
-This is the official PyTorch implementation of the paper ''Region-Aware Diffusion for Zero-shot Text-driven Image Editing''.
+This is the official PyTorch implementation of the paper [''Region-Aware Diffusion for Zero-shot Text-driven Image Editing''](https://arxiv.org/abs/2302.11797).
 
 ![MAIN3_e2-min](https://github.com/haha-lisa/RDM-Region-Aware-Diffusion-Model/blob/main/teaser.png)
 
