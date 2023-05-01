@@ -38,5 +38,15 @@ python run_edit.py --edit ./input_image/flower1.jpg --region ./input_image/flowe
 --text "a chrysanthemum" --prefix "test_flower"
 ```
 
+## Cite
+```
+@article{huang2023region,
+  title={Region-Aware Diffusion for Zero-shot Text-driven Image Editing},
+  author={Huang, Nisha and Tang, Fan and Dong, Weiming and Lee, Tong-Yee and Xu, Changsheng},
+  journal={arXiv preprint arXiv:2302.11797},
+  year={2023}
+}
+```
+
 ## License
 The codes and the pretrained model in this repository are under the MIT license as specified by the LICENSE file.<br>
