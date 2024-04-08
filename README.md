@@ -38,6 +38,16 @@ python run_edit.py --edit ./input_image/flower1.jpg --region ./input_image/flowe
 --text "a chrysanthemum" --prefix "test_flower"
 ```
 
+## Citation
+If you find our work is useful in your research, please consider citing:
+```
+@article{huang2023region,
+  title={Region-aware diffusion for zero-shot text-driven image editing},
+  author={Huang, Nisha and Tang, Fan and Dong, Weiming and Lee, Tong-Yee and Xu, Changsheng},
+  journal={arXiv preprint arXiv:2302.11797},
+  year={2023}
+}
+```
 
 
 ## License
